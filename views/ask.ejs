@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/header")%>
+
+<body>
+    <%- include("partials/navbar")%>
+
+    <div class="container">
+        <div class="card" id="form-quest">
+            <div class="card-header">
+                <h3>Realizar pergunta</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/ask">
+                    <label for="title">Título</label>
+                    <input name="title" type="text" placeholder="Título" class="form-control">
+                    <br>
+                    <label for="description">Descrição</label>
+                    <textarea name="description" placeholder="Descreva sua pergunta"
+                        class="form-control"></textarea>
+
+                    <br>
+                    <button type="submit" class="btn btn-success text-center">Perguntar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/scripts")%>    
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header")%>
+
+    <body>
+        <%- include("partials/navbar")%>
+
+            <div class="container">
+                <hr>
+                <h1>
+                    <%= question.title%>
+                </h1>
+                <p>
+                    <%= question.description%>
+                </p>
+                <hr>
+                <form action="/answer" method="POST">
+                    <h3>Responda</h3>
+                    <textarea name="body" placeholder="Digite sua resposta" class="form-control"></textarea>
+                    <br>
+                    <input type="hidden" name="questionId" value="<%= question.id%>">
+                    <button type="submit" class="btn btn-primary">Responder</button>
+                </form>
+                <hr>
+                <h3>Respostas</h3>
+                <hr>
+                <% answers.forEach(answer=>{%>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <p><%= answer.body%></p>
+                        </div>
+                    </div>
+                    
+                <%})%>
+            </div>
+
+            <%- include("partials/scripts")%>
+    </body>
+
+</html>
